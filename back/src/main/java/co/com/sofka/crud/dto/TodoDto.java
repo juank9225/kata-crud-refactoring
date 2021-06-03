@@ -1,27 +1,17 @@
-package co.com.sofka.crud;
+package co.com.sofka.crud.dto;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
-@Entity
-@Table(name="todo")
-public class Todo {
-    @Id
-    @GeneratedValue
+public class TodoDto {
+
     private Long id;
+    @NotNull
     private String name;
+    @NotNull
     private boolean completed;
+    @NotNull
     private String groupListId;
-
-    public String getGroupListId() {
-        return groupListId;
-    }
-
-    public void setGroupListId(String groupListId) {
-        this.groupListId = groupListId;
-    }
 
     public Long getId() {
         return id;
@@ -45,5 +35,13 @@ public class Todo {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    public String getGroupListId() {
+        return groupListId;
+    }
+
+    public void setGroupListId(String groupListId) {
+        this.groupListId = groupListId;
     }
 }
