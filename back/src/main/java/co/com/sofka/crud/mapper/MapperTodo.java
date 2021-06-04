@@ -3,8 +3,7 @@ package co.com.sofka.crud.mapper;
 import co.com.sofka.crud.dto.TodoDto;
 import co.com.sofka.crud.entity.Todo;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
+
 
 import java.util.List;
 
@@ -14,4 +13,5 @@ public interface MapperTodo {
     TodoDto toModelDto(Todo todo);
     Todo toDtoModel(TodoDto todoDto);
     List<TodoDto> listTodoDto (List<Todo> todos);
+
 }

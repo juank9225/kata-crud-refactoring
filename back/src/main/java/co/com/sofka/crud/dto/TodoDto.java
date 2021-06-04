@@ -1,17 +1,13 @@
 package co.com.sofka.crud.dto;
-import lombok.*;
 
 import javax.validation.constraints.NotNull;
 
 public class TodoDto {
 
     private Long id;
-    @NotNull
     private String name;
-    @NotNull
     private boolean completed;
-    @NotNull
-    private String groupListId;
+    private String group;
 
     public Long getId() {
         return id;
@@ -37,11 +33,11 @@ public class TodoDto {
         this.completed = completed;
     }
 
-    public String getGroupListId() {
-        return groupListId;
+    public String getGroup() {
+        return group;
     }
 
-    public void setGroupListId(String groupListId) {
-        this.groupListId = groupListId;
+    public void setGroup(String group) {
+        this.group = group;
     }
 }

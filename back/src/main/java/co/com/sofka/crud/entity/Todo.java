@@ -12,7 +12,7 @@ public class Todo {
 
     private boolean completed;
 
-    private String groupListId;
+    private String group;
 
     public Long getId() {
         return id;
@@ -38,11 +38,11 @@ public class Todo {
         this.completed = completed;
     }
 
-    public String getGroupListId() {
-        return groupListId;
+    public String getGroup() {
+        return group;
     }
 
-    public void setGroupListId(String groupListId) {
-        this.groupListId = groupListId;
+    public void setGroup(String group) {
+        this.group = group;
     }
 }
