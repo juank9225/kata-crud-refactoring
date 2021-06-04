@@ -33,6 +33,7 @@ public class TodoServiceImplement implements TodoService {
 
     @Override
     public void delete(Long id){
+
         repository.delete(mapperTodo.toDtoModel(get(id)));
     }
 

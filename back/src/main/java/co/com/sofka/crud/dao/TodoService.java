@@ -1,7 +1,6 @@
 package co.com.sofka.crud.dao;
 
 import co.com.sofka.crud.dto.TodoDto;
-import co.com.sofka.crud.entity.Todo;
 
 public interface TodoService {
 

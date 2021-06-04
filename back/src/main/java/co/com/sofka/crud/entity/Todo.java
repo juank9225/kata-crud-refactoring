@@ -1,5 +1,6 @@
 package co.com.sofka.crud.entity;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="todo")
@@ -8,11 +9,14 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
     private String name;
 
+    @Column
     private boolean completed;
 
-    private String group;
+    @Column
+    private Long categoria;
 
     public Long getId() {
         return id;
@@ -38,11 +42,11 @@ public class Todo {
         this.completed = completed;
     }
 
-    public String getGroup() {
-        return group;
+    public Long getCategoria() {
+        return categoria;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setCategoria(Long categoria) {
+        this.categoria = categoria;
     }
 }

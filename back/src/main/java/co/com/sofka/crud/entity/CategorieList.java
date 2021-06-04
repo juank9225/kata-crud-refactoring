@@ -8,13 +8,14 @@ import java.util.Set;
 public class CategorieList {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(unique = true,nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "group")
+    @JoinColumn(name = "categoria")
     private Set<Todo> todo;
 
 
@@ -41,4 +42,6 @@ public class CategorieList {
     public void setTodo(Set<Todo> todo) {
         this.todo = todo;
     }
+
+
 }

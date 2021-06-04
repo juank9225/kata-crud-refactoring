@@ -1,13 +1,11 @@
 package co.com.sofka.crud.dto;
 
-import javax.validation.constraints.NotNull;
-
 public class TodoDto {
 
     private Long id;
     private String name;
     private boolean completed;
-    private String group;
+    private Long categoria;
 
     public Long getId() {
         return id;
@@ -33,11 +31,11 @@ public class TodoDto {
         this.completed = completed;
     }
 
-    public String getGroup() {
-        return group;
+    public Long getCategoria() {
+        return categoria;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setCategoria(Long categoria) {
+        this.categoria = categoria;
     }
 }
