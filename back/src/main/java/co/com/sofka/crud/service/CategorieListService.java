@@ -20,25 +20,23 @@ public class CategorieListService implements CategorieListDao {
 
 
     @Override
-    public Iterable<CategorieListDto> list() {
-        return mapperCategorieList.listaCategorias(
-                (List<CategorieList>) categorieRepository.findAll());
+    public Iterable<CategorieList> list() {
+        return  categorieRepository.findAll();
     }
 
     @Override
-    public CategorieListDto save(CategorieListDto categorieListDto) {
-        CategorieList categoria = mapperCategorieList.CategorieListModeloDao(categorieListDto);
-        return mapperCategorieList.modeloCtegorieListDao(categorieRepository.save(categoria));
+    public CategorieList save(CategorieList categorieList) {
+        return categorieRepository.save(categorieList);
     }
 
     @Override
     public void delete(Long id) {
-        categorieRepository.delete(mapperCategorieList.CategorieListModeloDao(get(id)));
+        categorieRepository.delete(get(id));
     }
 
     @Override
-    public CategorieListDto get(Long id) {
-        CategorieList categorieList = categorieRepository.findById(id).orElseThrow();
-        return mapperCategorieList.modeloCtegorieListDao(categorieList);
+    public CategorieList get(Long id) {
+        return categorieRepository.findById(id).orElseThrow();
+
     }
 }

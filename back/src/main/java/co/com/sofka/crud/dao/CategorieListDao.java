@@ -1,15 +1,15 @@
 package co.com.sofka.crud.dao;
 
 
-import co.com.sofka.crud.dto.CategorieListDto;
+import co.com.sofka.crud.entity.CategorieList;
 
 public interface CategorieListDao {
 
-    Iterable<CategorieListDto> list();
+    Iterable<CategorieList> list();
 
-    CategorieListDto save(CategorieListDto categorieListDto);
+    CategorieList save(CategorieList categorieList);
 
     void delete(Long id);
 
-    CategorieListDto get(Long id);
+    CategorieList get(Long id);
 }

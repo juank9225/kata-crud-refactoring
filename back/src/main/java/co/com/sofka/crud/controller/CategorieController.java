@@ -1,6 +1,7 @@
 package co.com.sofka.crud.controller;
 
 import co.com.sofka.crud.dto.CategorieListDto;
+import co.com.sofka.crud.entity.CategorieList;
 import co.com.sofka.crud.service.CategorieListService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +15,13 @@ public class CategorieController {
     private CategorieListService categorieListService;
 
     @GetMapping(value = "api/categorias")
-    public Iterable<CategorieListDto> list(){
+    public Iterable<CategorieList> list(){
         return categorieListService.list();
     }
 
     @PostMapping(value = "api/categoria")
-    public CategorieListDto save(@RequestBody CategorieListDto categorieListDao){
-        return categorieListService.save(categorieListDao);
+    public CategorieList save(@RequestBody CategorieList categorieList){
+        return categorieListService.save(categorieList);
     }
 
     @DeleteMapping(value = "api/{id}/categoria")
@@ -29,7 +30,7 @@ public class CategorieController {
     }
 
     @GetMapping(value = "api/{id}/categoria")
-    public CategorieListDto get(@PathVariable("id") Long id){
+    public CategorieList get(@PathVariable("id") Long id){
         return categorieListService.get(id);
     }
 
