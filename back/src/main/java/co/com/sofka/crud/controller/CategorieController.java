@@ -7,6 +7,8 @@ import co.com.sofka.crud.service.CategorieListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class CategorieController {
@@ -20,7 +22,7 @@ public class CategorieController {
     }
 
     @PostMapping(value = "api/categoria")
-    public CategorieList save(@RequestBody CategorieList categorieList){
+    public CategorieList save(@Valid @RequestBody CategorieList categorieList){
         return categorieListService.save(categorieList);
     }
 

@@ -5,6 +5,8 @@ import co.com.sofka.crud.service.TodoServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class TodoController {
@@ -19,7 +21,7 @@ public class TodoController {
     }
     
     @PostMapping(value = "api/todo")
-    public TodoDto save(@RequestBody TodoDto todoDto){
+    public TodoDto save(@Valid @RequestBody TodoDto todoDto){
         return service.save(todoDto);
     }
 

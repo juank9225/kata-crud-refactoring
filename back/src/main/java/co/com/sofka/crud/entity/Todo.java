@@ -1,4 +1,7 @@
 package co.com.sofka.crud.entity;
+
+import org.intellij.lang.annotations.Pattern;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -10,12 +13,14 @@ public class Todo {
     private Long id;
 
     @Column
+    @NotNull(message="El nombre de la tarea es obligatoria")
     private String name;
 
     @Column
     private boolean completed;
 
     @Column
+    @NotNull(message="El grupo de la categoria es obligatoria")
     private Long categoria;
 
     public Long getId() {

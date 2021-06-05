@@ -1,6 +1,7 @@
 package co.com.sofka.crud.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
@@ -12,6 +13,7 @@ public class CategorieList {
     private Long id;
 
     @Column
+    @NotNull(message="El nombre del grupo es obligatoria")
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
