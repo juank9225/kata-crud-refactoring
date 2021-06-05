@@ -25,7 +25,7 @@ public class CategorieController {
         return categorieListService.save(categorieList);
     }
 
-    @DeleteMapping(value = "api/{id}/categoria/delete")
+    @DeleteMapping(value = "api/{id}/categoria")
     public void delete(@PathVariable("id")Long id){
         categorieListService.delete(id);
     }

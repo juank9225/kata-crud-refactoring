@@ -61,10 +61,10 @@ const List = () => {
       </thead>
       <tbody>
         {currentList.map((todo) => {
-          return <tr key={todo.id} style={todo.completedDTO ? decorationDone : {}}>
+          return <tr key={todo.id} style={todo.completed ? decorationDone : {}}>
             <td>{todo.id}</td>
-            <td>{todo.nameDTO}</td>
-            <td><input type="checkbox" defaultChecked={todo.completedDTO} onChange={(event) => onChange(event, todo)}></input></td>
+            <td>{todo.name}</td>
+            <td><input type="checkbox" defaultChecked={todo.completed} onChange={(event) => onChange(event, todo)}></input></td>
             <td><button onClick={() => onDelete(todo.id)}>Eliminar</button></td>
             <td><button onClick={() => onEdit(todo)}>Editar</button></td>
           </tr>;
