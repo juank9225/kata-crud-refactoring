@@ -1,7 +1,6 @@
 package co.com.sofka.crud.dto;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
 public class CategorieListDto {

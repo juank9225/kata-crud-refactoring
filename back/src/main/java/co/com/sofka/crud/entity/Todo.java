@@ -1,7 +1,5 @@
 package co.com.sofka.crud.entity;
 
-import org.intellij.lang.annotations.Pattern;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 

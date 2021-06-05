@@ -20,7 +20,6 @@ public class TodoServiceImplement implements TodoService {
 
     @Override
     public Iterable<TodoDto> list(){
-
         return mapperTodo.listTodoDto(
                 (List<Todo>) repository.findAll());
     }
@@ -33,13 +32,11 @@ public class TodoServiceImplement implements TodoService {
 
     @Override
     public void delete(Long id){
-
         repository.delete(mapperTodo.toDtoModel(get(id)));
     }
 
     @Override
     public TodoDto get(Long id){
-
         Todo todo = repository.findById(id).orElseThrow();
         return mapperTodo.toModelDto(todo);
     }

@@ -1,6 +1,5 @@
 package co.com.sofka.crud.controller;
 
-import co.com.sofka.crud.dto.CategorieListDto;
 import co.com.sofka.crud.entity.CategorieList;
 import co.com.sofka.crud.service.CategorieListService;
 
@@ -26,7 +25,7 @@ public class CategorieController {
         return categorieListService.save(categorieList);
     }
 
-    @DeleteMapping(value = "api/{id}/categoria")
+    @DeleteMapping(value = "api/{id}/categoria/delete")
     public void delete(@PathVariable("id")Long id){
         categorieListService.delete(id);
     }

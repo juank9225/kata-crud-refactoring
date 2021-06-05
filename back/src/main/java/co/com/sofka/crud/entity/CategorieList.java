@@ -1,7 +1,8 @@
 package co.com.sofka.crud.entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.util.Set;
 
 @Entity
@@ -13,13 +14,21 @@ public class CategorieList {
     private Long id;
 
     @Column
-    @NotNull(message="El nombre del grupo es obligatoria")
+    @NotBlank(message="El nombre de la categoria no puede estar vacío")
+    @Pattern(regexp = "[A-Za-z]+",message = "El nombre solo puede contener letras")
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "categoria")
     private Set<Todo> todo;
 
+    public Set<Todo> getTodo() {
+        return todo;
+    }
+
+    public void setTodo(Set<Todo> todo) {
+        this.todo = todo;
+    }
 
     public Long getId() {
         return id;
@@ -36,14 +45,5 @@ public class CategorieList {
     public void setName(String name) {
         this.name = name;
     }
-
-    public Set<Todo> getTodo() {
-        return todo;
-    }
-
-    public void setTodo(Set<Todo> todo) {
-        this.todo = todo;
-    }
-
 
 }
