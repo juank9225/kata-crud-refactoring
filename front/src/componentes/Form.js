@@ -13,9 +13,9 @@ const Form = () => {
         event.preventDefault();
 
         const request = {
-            nameDTO: state.nameDTO,
+            name: state.name,
             id: null,
-            completedDTO: false
+            completed: false
         };
 
 
@@ -29,7 +29,7 @@ const Form = () => {
             .then(response => response.json())
             .then((todo) => {
                 dispatch({ type: "add-item", item: todo });
-                setState({ nameDTO: "" });
+                setState({ name: "" });
                 formRef.current.reset();
             });
     };
@@ -38,9 +38,9 @@ const Form = () => {
         event.preventDefault();
 
         const request = {
-            nameDTO: state.nameDTO,
+            name: state.name,
             id: item.id,
-            isCompletedDTO: item.isCompletedDTO
+            Completed: item.Completed
         };
 
 
@@ -54,7 +54,7 @@ const Form = () => {
             .then(response => response.json())
             .then((todo) => {
                 dispatch({ type: "update-item", item: todo });
-                setState({ nameDTO: "" });
+                setState({ name: "" });
                 formRef.current.reset();
             });
     };
@@ -62,14 +62,14 @@ const Form = () => {
     return <form ref={formRef}>
         <input
             type="text"
-            nameDTO="nameDTO"
+            name="name"
             placeholder="¿Qué piensas hacer hoy?"
-            defaultValue={item.nameDTO}
+            defaultValue={item.name}
             onChange={(event) => {
-                setState({ ...state, nameDTO: event.target.value });
+                setState({ ...state, name: event.target.value });
             }}></input>
-        {item.id && <button onClick={onEdit}>Actualizar</button>}
-        {!item.id && <button onClick={onAdd}>Crear</button>}
+        {item.id && <button onClick={onEdit} class="botonCrearr">Actualizar</button>}
+        {!item.id && <button onClick={onAdd} class="botonCrear">Crear</button>}
     </form>;
 };
 
